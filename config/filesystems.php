@@ -54,6 +54,24 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'jobs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/jobs'),
+            'url' => env('APP_URL').'/storage/jobs',
+            'visibility' => 'public',
+        ],
+        'categories' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/categories'),
+            'url' => env('APP_URL').'/storage/categories',
+            'visibility' => 'public',
+        ],
+        'fronts' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/fronts'),
+            'url' => env('APP_URL').'/storage/fronts',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

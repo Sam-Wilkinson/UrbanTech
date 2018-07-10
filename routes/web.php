@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/admin/jobs', 'JobController');
+
+Route::resource('/admin/categories','CategoryController');
+
+Route::resource('/admin/texts', 'TextController');
