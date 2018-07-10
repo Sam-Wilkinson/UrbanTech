@@ -24,16 +24,11 @@ class CreateCategoriesTable extends Migration
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name_en');
-            $table->string('name_fr')->nullable();
-            $table->string('name_nl')->nullable();
+            $table->string('name_en')->unique();
+            $table->string('name_fr')->unique()->nullable();
+            $table->string('name_nl')->unique()->nullable();
             $table->string('image')->nullable();
-
-            $table->unique(["name_fr"], 'name_fr_UNIQUE');
-
-            $table->unique(["name_en"], 'name_en_UNIQUE');
-
-            $table->unique(["name_nl"], 'name_nl_UNIQUE');
+            
             $table->softDeletes();
             $table->nullableTimestamps();
         });
