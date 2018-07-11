@@ -37,7 +37,7 @@ class ImageServiceProvider extends ServiceProvider
          */
         $this->app->bind('ImageDelete', function()
         {
-        return new App\Services\ImageDelete;
+        return new App\Services\imageDelete;
         });
     }
 }

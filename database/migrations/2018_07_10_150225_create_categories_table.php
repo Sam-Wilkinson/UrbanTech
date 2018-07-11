@@ -28,7 +28,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name_fr')->unique()->nullable();
             $table->string('name_nl')->unique()->nullable();
             $table->string('image')->nullable();
-            
+
             $table->softDeletes();
             $table->nullableTimestamps();
         });

@@ -24,6 +24,9 @@ class CreateJobsTable extends Migration
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('name_en');
+            $table->string('name_fr')->nullable();
+            $table->string('name_nl')->nullable();
             $table->longText('description_en');
             $table->longText('description_fr')->nullable();
             $table->longText('description_nl')->nullable();
@@ -35,6 +38,7 @@ class CreateJobsTable extends Migration
             $table->string('location_fr')->nullable();
             $table->string('location_nl')->nullable();
             $table->unsignedInteger('categories_id');
+            
 
             $table->index(["categories_id"], 'fk_jobs_categories_idx');
             $table->softDeletes();

@@ -5,7 +5,7 @@ namespace App\Services;
 
 use Image;
 use Storage;
-class ImageResize {
+class imageResize {
 /*
 * Saves and resizes an image
 * @param $image the image sent by the form

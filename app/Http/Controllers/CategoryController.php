@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCategory;
 
 class CategoryController extends Controller
 {
@@ -14,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -33,9 +36,29 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategory $request)
     {
-        //
+        $category = new Category;
+        $category->name_en = $request->name_en;
+        $category->name_fr = $request->name_fr;
+        $category->name_nl = $request->name_nl;
+        if($request->image != null){
+            $category->image = App::make('ImageResize')->imageStore($request->image, 'categories', 60 , 60);
+        }
+        if($category->save()){
+            return redirect()->route('categories.index')->with([
+                "status"=> "Success",
+                "message"=> "You have successfully created a Category",
+                "color"=> "success"
+            ]);
+        }else{
+            return redirect()->route('categories.index')->with([
+                "status"=> "Failure",
+                "message"=> "Unfortunately the new Category did not save correctly",
+                "color"=> "danger"
+                ]);
+        }
+
     }
 
     /**
@@ -57,7 +80,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit',compact('category'));
     }
 
     /**
@@ -67,9 +90,32 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategory $request, Category $category)
     {
-        //
+        $category->name_en = $request->name_en;
+        $category->name_fr = $request->name_fr;
+        $category->name_nl = $request->name_nl;
+        if($request->image != null){
+            if($category->image != null){
+                App::make('ImageDelete')->imageDelete($category->image, 'categories');
+            }
+            $category->image = App::make('ImageResize')->imageStore($request->image, 'categories', 60 , 60);
+        }
+
+        if($category->save()){
+            return redirect()->route('categories.index')->with([
+                "status"=> "Success",
+                "message"=> "You have successfully modified a new Category",
+                "color"=> "success"
+                ]);
+            }
+            else{
+                return redirect()->route('categories.index')->with([
+                    "status"=> "Failure",
+                    "message"=> "Unfortunately the Category was not modified",
+                    "color"=> "danger"
+                    ]);
+            };
     }
 
     /**
@@ -80,6 +126,18 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if($category->delete()){
+            return redirect()->route('categories.index')->with([
+                "status"=> "Sorry to see them go!",
+                "message"=> "You have successfully removed the category",
+                "color"=> "success"
+            ]);
+        }else{
+            return redirect()->route('categories.index')->with([
+                "status"=> "Failure",
+                "message"=> "Unfortunately the category was not archived",
+                "color"=> "danger"
+            ]);
+        }
     }
 }

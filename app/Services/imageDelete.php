@@ -4,7 +4,7 @@ namespace App\Services;
 
 
 use Storage;
-class ImageDelete {
+class imageDelete {
 
 /*
 * Deletes old images
