@@ -14,7 +14,15 @@ class TextController extends Controller
      */
     public function index()
     {
-        //
+        $homeDescription = Text::where('position','LIKE','%home_description%')->first();
+        $homeListTitles = Text::where('position', 'LIKE', '%home_list_title%')->get();
+        $homeListSubtitles = Text::where('position', 'LIKE', '%home_list_subtitle%')->get();
+        $valuesSection1 = Text::where('position', 'LIKE', '%values_section1%')->get();
+        $valuesSection2Texts = Text::where('position', 'LIKE', '%values_section2_t%')->get();
+        $valuesSection2list = Text::where('position', 'LIKE', '%values_section2_list_item%')->get();
+
+        //dd($valuesSection);
+        return view('admin.texts.index',compact('homeDescription','homeListTitles','homeListSubtitles','valuesSection1','valuesSection2Texts','valuesSection2list'));
     }
 
     /**

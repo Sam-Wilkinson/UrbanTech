@@ -80,7 +80,7 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        return view('admin.jobs.show',compact('job'));
     }
 
     /**
@@ -146,6 +146,18 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        if($job->delete()){
+            return redirect()->route('jobs.index')->with([
+                "status"=> "Success",
+                "message"=> "You have successfully removed a Job",
+                "color"=> "success"
+            ]);
+        }else{
+            return redirect()->route('jobs.index')->with([
+                "status"=> "Warning",
+                "message"=> "Unfortunately the Job was not removed, please try again",
+                "color"=> "danger"
+            ]);
+        }
     }
 }
