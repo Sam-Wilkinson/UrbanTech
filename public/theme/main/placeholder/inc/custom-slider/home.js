@@ -12,10 +12,11 @@
 				animSpeed: 500,
 				pauseTime: 5000,
 				startSlide: 0,
-				directionNav: true,
+				directionNav: false,
 				controlNavThumbs: false,
 				pauseOnHover: false,
 				manualAdvance: true
+				
 			 });
 			 
 			$('#ensign-nivoslider-2').nivoSlider({
