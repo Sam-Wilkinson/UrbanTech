@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Text;
+use App\Http\Requests\StoreText;
 use Illuminate\Http\Request;
 
 class TextController extends Controller
@@ -102,9 +103,8 @@ class TextController extends Controller
      * @param  \App\Text  $text
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Text $text)
+    public function update(StoreText $request, Text $text)
     {
-        dd($request->text);
         $text->content_en = $request->text;
 
         if($text->save()){

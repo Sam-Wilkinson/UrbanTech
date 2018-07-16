@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-<form method="POST" action="{{route('categories.store')}}" enctype="multipart/form-data">
+<form method="POST" action="{{route('categories.store')}}" enctype="multipart/form-data" class="box">
     @csrf
     @method('POST')
     @if ($errors->any())
@@ -20,17 +20,17 @@
     @endif
 
     <div class="p-1 my-2">
-        <label for="">Name in English * </label>
+        <label class="box-header" for="">Name in English * </label>
         <input type="text" name="name_en" id="name" class="form-control border {{$errors->has('name
         _en')? 'border-danger': ''}}" value="{{old('name_en')}}" aria-describedby="helpId">
     </div>
     <div class="p-1 my-2">
-        <label for="">Name in French</label>
+        <label class="box-header"  for="">Name in French</label>
         <input type="text" name="name_fr" id="name" class="form-control border {{$errors->has('name
             _fr')? 'border-danger': ''}}" value="{{old('name_fr')}}" aria-describedby="helpId">
     </div>
     <div class="p-1 my-2">
-        <label for="">Name in Dutch</label>
+        <label class="box-header" for="">Name in Dutch</label>
         <input type="text" name="name_nl" id="name" class="form-control border {{$errors->has('name
             _nl')? 'border-danger': ''}}" value="{{old('name_nl')}}" aria-describedby="helpId">
     </div>

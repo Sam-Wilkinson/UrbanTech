@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form method="POST" action="{{route('jobs.store')}}" enctype="multipart/form-data">
+<form method="POST" action="{{route('jobs.store')}}" enctype="multipart/form-data" class="box">
     @csrf
     @method('POST')
     @if ($errors->any())
@@ -95,7 +95,7 @@
     </div>
 
     <div class="p-1 my-1">
-        <label for="">Category</label>
+        <label for="">Category *</label>
         @foreach($categories as $category)
             <div class="border bg-light p-3 mx-2">
                 <input type="radio" id="category" name="category" value="{{$category->id}}"><label for="coding">{{$category->name_en}}</label>

@@ -21,7 +21,7 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Section Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_en}}</textarea>
+                    <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_en}}</textarea>
                     <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                 </div>
             </form>

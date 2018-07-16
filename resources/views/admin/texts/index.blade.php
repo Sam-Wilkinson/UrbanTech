@@ -10,9 +10,19 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 <div class="row mr-2">
+    
         <!-- Vertical tabs for each section of the website -->
-        <div class="col-3">
+        <div class="col-3 box-header">
             @include('admin.texts.partials.main_nav')
         </div>
         <!-- Content of the pages -->
