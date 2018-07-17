@@ -15,6 +15,10 @@ Route::get('/' , 'FrontController@welcome')->name('welcome');
 
 Route::get('/job/{job}' , 'FrontController@job')->name('job');
 
+Route::get('/jobs/' , 'FrontController@jobs')->name('jobs');
+
+Route::get('/jobs/categories/{category}' , 'FrontController@category')->name('category');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

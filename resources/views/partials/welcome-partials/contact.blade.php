@@ -5,22 +5,22 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="call-back-content">
                             <h2>{{$general[0]->content_en}}</h2>
-                            <div class="contact-us-page-area">
-                              <div class="contact-box">
-                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class=" contact-us-page-area" style="padding-top:0">
+                              <div class="row contact-box">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <div class="single-contact-box">
-                                          <p><i class="fa fa-map-marker" aria-hidden="true"></i> 119 House ,Australia Melborne,<br/><span>58 street, GPTA-107.</span></p>
+                                          <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i> 119 House ,Australia Melborne,<br/><span>58 street, GPTA-107.</span></p>
                                       </div>
                                   </div>
                                   <div class="w-100"></div>
-                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <div class="single-contact-box">
                                           <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                          <span>Support@viktorfinance.com</span></p>
+                                          Support@viktorfinance.com</p>
                                       </div>
                                   </div>
                                   <div class="w-100"></div>
-                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <div class="single-contact-box last-child">
                                           <p><i class="fa fa-map-marker" aria-hidden="true"></i>  + 123 456 7891 <br/> <span>+ 00 456 78910</span></p>
                                       </div>

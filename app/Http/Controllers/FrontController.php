@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Text;
 use App\Job;
+use App\Category;
 
 class FrontController extends Controller
 {
@@ -42,7 +43,22 @@ class FrontController extends Controller
 
         return view('welcome',compact('homeDescription','homeListTitles','homeListSubtitles','values1','values2','values3','values4','ICTText','ICTSection1','ICTSection2','recText','recTitles','recSections','jobs','general'));
     }
+    
+    public function jobs(){
+        $categories = Category::orderby('id','desc')->get();
+        $jobs = Job::orderBy('created_at', 'desc')->get();
+
+        return view('jobs',compact('jobs','categories'));
+    }
+
     public function job(Job $job){
         return view('job',compact('job'));
+    }
+
+    public function category($category){
+        $categories = Category::orderby('id','desc')->get();
+        $jobs = Job::where('categories_id',$category)->orderby('created_at','desc')->get();
+        
+        return view('jobs',compact('jobs','categories'));
     }
 }
