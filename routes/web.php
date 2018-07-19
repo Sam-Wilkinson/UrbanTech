@@ -21,6 +21,10 @@ Route::get('/jobs/searching' , 'FrontController@search')->name('searching');
 
 Route::get('/jobs/categories/{category}' , 'FrontController@category')->name('category');
 
+Route::get('/contact' , 'FrontController@contact')->name('contact');
+
+Route::post('/contactus' , 'FrontController@contactus')->name('contactus');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

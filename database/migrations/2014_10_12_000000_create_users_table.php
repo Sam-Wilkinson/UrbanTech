@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
 
             $table->unique(["email"], 'email_UNIQUE');
             $table->nullableTimestamps();
+            $table->rememberToken();
         });
     }
 

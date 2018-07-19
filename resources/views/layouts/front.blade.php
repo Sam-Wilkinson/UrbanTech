@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Welcome || Viktor Home 1</title>
+        <title>UrbanTech</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -82,5 +82,9 @@
         <script src="{{asset('theme/main/placeholder/inc/custom-slider/home.js')}}" type="text/javascript"></script>
 		<!-- main js -->
         <script src="{{asset('theme/main/placeholder/js/main.js')}}"></script>
+        @if(Route::currentRouteName() == 'contact')
+        @yield('google_api')
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlpvQIrRF3OZNq3ksc4sEtwEx8hLLNuSk&callback=myMap"></script>
+        @endif
     </body>
 </html>

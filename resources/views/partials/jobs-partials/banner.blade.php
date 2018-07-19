@@ -10,7 +10,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="header-page-locator">
                                 <ul>
-                                    <li><a href="{{route('welcome')}}">Home /</a> Projects</li>
+                                    <li><a href="{{route('welcome')}}">Home /</a> Jobs</li>
                                     
                                 </ul>
                             </div>

@@ -1848,9 +1848,9 @@ footer .footer-bottom-area p {
     color: #01b1d7;
 }
 
-.total-blog-area .blog-sidebar-area .single-sidebar .sidebar-category ul li a:before {
+.total-blog-area .blog-sidebar-area .single-sidebar .sidebar-category ul li .before:before {
     color: #01b1d7;
-    content: "";
+    content: "\f0a9";
     font-family: FontAwesome;
     height: 15px;
     left: -5px;

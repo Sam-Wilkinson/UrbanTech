@@ -1,5 +1,5 @@
 <!-- Request for call back area start Here -->
-        <div class="home-callback-area">
+        <div class="home-callback-area" style="padding:5px">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -30,39 +30,59 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        @if ($errors->any())
+                          <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                              </ul>
+                          </div>
+                        @endif
                         <div class="call-back-form">                           
-                            <form>
-                             <fieldset>
+                            <form action="{{route('contactus')}}" method="post">
+                              @csrf
+                              @method('POST')
+                             <fieldset name="content">
                                 <div class="col-sm-12">
                                 <div class="form-group">
-                                      <select class="form-control" id="sel1">
-                                        <option>Discussions with Financial Experts</option>
-                                        <option>Financial Experts</option>
-                                        <option>Invest Funds</option>
-                                        <option>Investment and Funds</option>
+                                      <select class="form-control" name="title" id="sel1">
+                                        <option>Mr</option>
+                                        <option>Mrs</option>
+                                        <option>Non Binary</option>
                                       </select>
                                   </div>
                                   </div>
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name*">
+                                    <input type="text" name="firstName" class="form-control" placeholder="{{$contact[2]->content_en}}*">
                                   </div>
                                 </div>
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name*">
+                                    <input type="text" name="lastName" class="form-control" placeholder="{{$contact[3]->content_en}}*">
                                   </div>
                                 </div>
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email*">
+                                    <input type="email" name="email" class="form-control" placeholder="{{$contact[4]->content_en}}*">
                                   </div>
                                 </div>
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone*">
+                                    <input type="text" name="firm" class="form-control" placeholder="{{$contact[5]->content_en}}">
                                   </div>
                                 </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                      <input type="text" name="subject" class="form-control" placeholder="{{$contact[6]->content_en}}">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-12">
+                                      <div class="form-group">
+                                        <textarea type="text" name="message" class="form-control" row="6" placeholder="{{$contact[7]->content_en}}" style="resize: vertical" ></textarea>
+                                      </div>
+                                    </div>
                                 <div class="col-sm-12">
                                   <div class="form-group">
                                     <button class="btn-send" type="submit">Submit</button>

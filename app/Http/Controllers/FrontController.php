@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Text;
 use App\Job;
 use App\Category;
+use Mail;
+use App\Mail\ContactUsMailer;
+use App\Http\Requests\StoreContact;
 
 class FrontController extends Controller
 {
@@ -38,10 +41,11 @@ class FrontController extends Controller
 
 
         $general = Text::where('position', 'LIKE', '%contact_section1%')->get();
+        $contact = Text::where('position', 'LIKE', '%contact_section2%')->get();
 
 
 
-        return view('welcome',compact('homeDescription','homeListTitles','homeListSubtitles','values1','values2','values3','values4','ICTText','ICTSection1','ICTSection2','recText','recTitles','recSections','jobs','general'));
+        return view('welcome',compact('homeDescription','homeListTitles','homeListSubtitles','values1','values2','values3','values4','ICTText','ICTSection1','ICTSection2','recText','recTitles','recSections','jobs','general','contact'));
     }
     
     public function jobs(){
@@ -53,7 +57,10 @@ class FrontController extends Controller
     }
 
     public function job(Job $job){
-        return view('job',compact('job'));
+        $categories = Category::orderby('id','desc')->get();
+        $texts = Text::where('position','LIKE','job%')->get();
+
+        return view('job',compact('job','categories','texts'));
     }
 
     public function category($category){
@@ -71,4 +78,21 @@ class FrontController extends Controller
 
         return view('jobs',compact('jobs','categories','recentJobs'));
     }
+
+    public function contact(){    
+        
+        $general = Text::where('position', 'LIKE', '%contact_section1%')->get();
+        $contact = Text::where('position', 'LIKE', '%contact_section2%')->get();
+
+        return view('contact',compact('general','contact'));
+    }
+
+    public function contactus(StoreContact $request){
+
+        Mail::to('UrbanTechCEO@UrbanTech.be')->send(new ContactUsMailer($request));
+        return redirect()->route('welcome')->with([
+            "message" => 'Your email has been sent and we will get back to you as soon as possible'
+        ]);
+    }
+    
 }

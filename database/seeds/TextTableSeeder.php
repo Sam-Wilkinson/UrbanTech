@@ -573,6 +573,30 @@ class TextTableSeeder extends Seeder
                 'content_nl' => "Bericht",
                 'position' => "contact_section2_message",
             ],
+            [
+                'content_en' => "Job description ",
+                'content_fr' => "Description de l'offre",
+                'content_nl' => "functieomschrijving ",
+                'position' => "job_section1_title",
+            ],
+            [
+                'content_en' => "Skills requirement ",
+                'content_fr' => "Compétences requises",
+                'content_nl' => "Vaardigheden",
+                'position' => "job_section2_title",
+            ],
+            [
+                'content_en' => "Job location",
+                'content_fr' => "Lieu de travail",
+                'content_nl' => "Tewerkstellingsplaats",
+                'position' => "job_section3_title",
+            ],
+            [
+                'content_en' => "Postulate",
+                'content_fr' => "Postuler",
+                'content_nl' => "Solliciteer",
+                'position' => "job_button",
+            ],
 
 
             

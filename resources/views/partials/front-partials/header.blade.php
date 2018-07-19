@@ -15,12 +15,14 @@
                                 <li class="{{Route::currentRouteName()=='jobs'? 'active':''}}"><a href="{{route('jobs')}}">Jobs <span></span> </a>
                                 </li>
                                 
-                                <li class="{{Route::currentRouteName()=='contact'? 'active':''}}"><a href="contact.html">Contact</a></li>
+                                <li class="{{Route::currentRouteName()=='contact'? 'active':''}}"><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 acurate">
-                       
+                        @if(session('message'))
+                            <h4 style="color:black">{{session('message')}}</h4 >
+                        @endif
                     </div>
                 </div>
             </div>
