@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
                         <div class="logo-area">
-                            <a href="{{route('welcome')}}"><img src="{{asset('theme/main/placeholder/img/logo.png')}}" alt="site logo"></a>
+                            <a href="{{route('welcome')}}"><img style="border-radius:25px" src="{{asset('theme/defaultImages/logo.jpg')}}" alt="site logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -12,7 +12,7 @@
                             <ul>
                                 <li class="{{Route::currentRouteName()=='welcome'? 'active':''}}"><a href="{{route('welcome')}}">Home <span></span> </a></li>
                                 
-                                <li class="{{Route::currentRouteName()=='jobs'? 'active':''}}"><a href="{{route('jobs')}}">Projects <span></span> </a>
+                                <li class="{{Route::currentRouteName()=='jobs'? 'active':''}}"><a href="{{route('jobs')}}">Jobs <span></span> </a>
                                 </li>
                                 
                                 <li class="{{Route::currentRouteName()=='contact'? 'active':''}}"><a href="contact.html">Contact</a></li>
@@ -20,18 +20,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 acurate">
-                        <div class="search-area">
-                            <div id="custom-search-input">
-                                <div class="input-group">
-                                    <input type="text" class="search-query form-control" placeholder="Search Here..." />
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-danger" type="button">
-                                            <span><i class="fa fa-search" aria-hidden="true"></i></span>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@
         <div class="row feature-image">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center acurate">
                 <div class="about-featured-image">
-                    <a href="about.html"><img src="{{asset('theme/main/placeholder/img/about/about-image.jpg')}}" alt=""></a>
+                    <a ><img src="{{asset('theme/defaultImages/itc.jpg')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 acurate">

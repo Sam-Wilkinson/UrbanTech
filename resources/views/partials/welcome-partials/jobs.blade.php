@@ -9,11 +9,12 @@
             </div>
         </div>
         <div class="row total-homenews">
+            @php($i = 0)
             @foreach($jobs as $job)
              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                  <div class="single-news">
                      <div class="news-image">
-                        <a href="{{route('job',['job' => $job->id])}}"><img src="{{asset('theme/main/placeholder/img/news/1.png')}}" alt=""></a>
+                        <a href="{{route('job',['job' => $job->id])}}"><img src="{{$job->image ? Storage::disk('jobs')->url($category->image):asset('theme/defaultImages/job'.$i.'.jpg') }}" alt=""></a>
                          <div class="news-date">                                    
                          <p>{{$job->created_at->format('d')}} <br/>{{$job->created_at->format('F')}}<br/>{{$job->created_at->format('Y')}}</p>
                          </div>
@@ -22,6 +23,7 @@
                      <p>{{$job->location_en}}</p>
                  </div>
              </div> 
+             @php($i++)
              @endforeach
         </div>                
     </div>

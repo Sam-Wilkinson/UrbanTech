@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="about-featured-image">
-                            <a href="about.html"><img src="{{asset('theme/main/placeholder/img/about/about.jpg')}}" alt=""></a>
+                            <a><img src="{{asset('theme/defaultImages/Engineering.jpg')}}" alt=""></a>
                         </div>
                     </div>
                 </div>

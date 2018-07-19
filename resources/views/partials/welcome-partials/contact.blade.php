@@ -9,20 +9,20 @@
                               <div class="row contact-box">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <div class="single-contact-box">
-                                          <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i> 119 House ,Australia Melborne,<br/><span>58 street, GPTA-107.</span></p>
+                                          <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i> {{$general[1]->content_en}} ,{{$general[2]->content_en}},<br/><span>{{$general[3]->content_en}}, {{$general[4]->content_en}}.</span></p>
                                       </div>
                                   </div>
                                   <div class="w-100"></div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <div class="single-contact-box">
                                           <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                          Support@viktorfinance.com</p>
+                                            {{$general[7]->content_en}}</p>
                                       </div>
                                   </div>
                                   <div class="w-100"></div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                      <div class="single-contact-box last-child">
-                                          <p><i class="fa fa-map-marker" aria-hidden="true"></i>  + 123 456 7891 <br/> <span>+ 00 456 78910</span></p>
+                                      <div class="single-contact-box">
+                                          <p><i class="fa fa-phone" aria-hidden="true"></i>{{$general[5]->content_en}} <br/> <span>{{$general[6]->content_en}}</span></p>
                                       </div>
                                   </div>
                               </div>

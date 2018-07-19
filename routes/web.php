@@ -17,6 +17,8 @@ Route::get('/job/{job}' , 'FrontController@job')->name('job');
 
 Route::get('/jobs/' , 'FrontController@jobs')->name('jobs');
 
+Route::get('/jobs/searching' , 'FrontController@search')->name('searching');
+
 Route::get('/jobs/categories/{category}' , 'FrontController@category')->name('category');
 
 Auth::routes();

@@ -46,9 +46,10 @@ class FrontController extends Controller
     
     public function jobs(){
         $categories = Category::orderby('id','desc')->get();
-        $jobs = Job::orderBy('created_at', 'desc')->get();
-
-        return view('jobs',compact('jobs','categories'));
+        $jobs = Job::orderBy('created_at', 'desc')->paginate(6);
+        $recentJobs = Job::orderby('CREATED_AT','desc')->take(3)->get();
+        
+        return view('jobs',compact('jobs','categories','recentJobs'));
     }
 
     public function job(Job $job){
@@ -57,8 +58,17 @@ class FrontController extends Controller
 
     public function category($category){
         $categories = Category::orderby('id','desc')->get();
-        $jobs = Job::where('categories_id',$category)->orderby('created_at','desc')->get();
+        $jobs = Job::where('categories_id',$category)->orderby('created_at','desc')->paginate(6);
+        $recentJobs = Job::orderby('CREATED_AT','desc')->take(3)->get();
         
-        return view('jobs',compact('jobs','categories'));
+        return view('jobs',compact('jobs','categories','recentJobs','category'));
+    }
+
+    public function search(Request $request){
+        $categories = Category::orderby('id','desc')->get();
+        $jobs = Job::where('name_en','LIKE','%'.$request->search.'%')->orderby('created_at','desc')->paginate(6);
+        $recentJobs = Job::orderby('CREATED_AT','desc')->take(3)->get();
+
+        return view('jobs',compact('jobs','categories','recentJobs'));
     }
 }

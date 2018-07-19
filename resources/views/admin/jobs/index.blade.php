@@ -38,6 +38,8 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center box-footer">
-        {!!$jobs->links();!!}
+        <div class="pagination-area">
+            {!!$jobs->links();!!}
+        </div>
     </div>
 @stop
