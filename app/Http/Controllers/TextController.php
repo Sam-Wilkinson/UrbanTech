@@ -44,13 +44,17 @@ class TextController extends Controller
         $recSection4title = Text::where('position', 'LIKE', 'resources_section4_title')->first();
         $recSection4list = Text::where('position', 'LIKE', '%resources_section4_list_item%')->get();
 
+        $jobText = Text::where('position', 'Like', '%job%')->get();
+
         $address = Text::where('position','LIKE', '%contact%')->get();
         $address = $address->splice(0,ceil($address->count()/2));
         $contact = Text::where('position', 'LIKE','contact_section2%')->get();
+
+
         
         
         return view('admin.texts.index',compact('homeDescription','homeListTitles','homeListSubtitles','valuesSection1','valuesSection2Texts','valuesSection2list','valuesSection3','valuesSection4','ICTText',
-        'ICTSection1Texts','ICTSection1list','ICTSection2Texts','ICTSection2list','recText','recSection1title','recSection1list','recSection2title','recSection2list','recSection3title','recSection3list','recSection4title','recSection4list','address','contact'));
+        'ICTSection1Texts','ICTSection1list','ICTSection2Texts','ICTSection2list','recText','recSection1title','recSection1list','recSection2title','recSection2list','recSection3title','recSection3list','recSection4title','recSection4list','jobText','address','contact'));
     }
 
     /**
@@ -105,7 +109,9 @@ class TextController extends Controller
      */
     public function update(StoreText $request, Text $text)
     {
-        $text->content_en = $request->text;
+        $text->content_en = $request->text_en;
+        $text->content_fr = $request->text_fr;
+        $text->content_nl = $request->text_nl;
 
         if($text->save()){
             return redirect()->route('texts.index')->with([

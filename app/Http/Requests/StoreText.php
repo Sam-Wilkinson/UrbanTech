@@ -24,7 +24,9 @@ class StoreText extends FormRequest
     public function rules()
     {
         return [
-            'text' => 'max:4000|required',
+            'text_en' => 'max:4000|required',
+            'text_fr' => 'max:4000',
+            'text_nl' => 'max:4000',
         ];
     }
 }

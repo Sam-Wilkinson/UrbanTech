@@ -3167,3 +3167,7 @@ Sidebar area start Here
 .highlight {
     left: 0px;
 }
+
+.locale .active {
+    text-decoration: underline;
+}

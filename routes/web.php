@@ -25,6 +25,8 @@ Route::get('/contact' , 'FrontController@contact')->name('contact');
 
 Route::post('/contactus' , 'FrontController@contactus')->name('contactus');
 
+Route::get('changeLocale/{locale}', 'FrontController@changelocale')->name('changeLocale');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -19,9 +19,20 @@
             <form method="POST" action="{{route('texts.update',['text' => $homeDescription->id])}}">
                 @csrf
                 @method('PUT')
+                <h2>Section Description</h2>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Section Description</label>
-                    <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_en}}</textarea>
+                    <label for="exampleFormControlTextarea1">English</label>
+                    <textarea name="text_en" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_en}}</textarea>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Francais</label>
+                    <textarea name="text_fr" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_fr}}</textarea>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Nederlands</label>
+                    <textarea name="text_nl" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$homeDescription->content_nl}}</textarea>
                     <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                 </div>
             </form>
@@ -38,11 +49,14 @@
                 <!-- Home List title Forms -->
                 <ul class="list-group col-5">
                     @foreach($homeListTitles as $title)
-                    <li class="list-group-item">
+                    <li class="list-group-item my-2">
                         <form class="row justify-content-between" method="POST" action="{{route('texts.update',['text' => $title->id])}}">
                                 @csrf
                                 @method('PUT')
-                            <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                            <input name="text_en" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                            <input name="text_fr" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                            <input name="text_nl" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
+
                             <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                         </form>
                     </li>
@@ -50,15 +64,19 @@
                 </ul>
                 <!-- Home List Subtitle Forms -->
                 <ul class="list-group col-5">
-                    <li class="list-group-item">
-                        <input name="text" type="text" readonly class="form-control-plaintext col-8" id="staticEmail" value="No Text Availible">
+                    <li class="list-group-item my-2">
+                        <input name="text_en" type="text" readonly class="form-control-plaintext col-8" id="staticEmail" value="No Text Availible">
+                        <input name="text_fr" type="text" readonly class="form-control-plaintext col-8" id="staticEmail" value="No Text Availible">
+                        <input name="text_nl" type="text" readonly class="form-control-plaintext col-8" id="staticEmail" value="No Text Availible">
                     </li>
                     @foreach($homeListSubtitles as $subtitle)
-                    <li class="list-group-item">
+                    <li class="list-group-item my-2">
                         <form class="row justify-content-between" method="POST" action="{{route('texts.update',['text' => $subtitle->id])}}">
                                 @csrf
                                 @method('PUT')
-                            <input  name="text" type="text" class=" col-8 form-control" value="{{$subtitle->content_en}}">
+                            <input  name="text_en" type="text" class=" col-8 form-control" value="{{$subtitle->content_en}}">
+                            <input  name="text_fr" type="text" class=" col-8 form-control" value="{{$subtitle->content_fr}}">
+                            <input  name="text_nl" type="text" class=" col-8 form-control" value="{{$subtitle->content_nl}}">
                             <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $subtitle->id])}}">Edit</button>
                         </form>
                     </li>

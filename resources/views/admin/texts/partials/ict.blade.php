@@ -11,35 +11,68 @@
             <!-- ICT Subsection 1 -->
         <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-text-tab">
               <!-- ICT main text form-->
+              <h2>Section Title</h2>
               <form method="POST" action="{{route('texts.update',['text' => $ICTText->id])}}">
                     @csrf
                     @method('PUT')
                       <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Section Title</label>
+                          <label for="exampleFormControlTextarea1">English</label>
                           <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTText->content_en}}</textarea>
+                        
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Francais</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTText->content_fr}}</textarea>
+                        
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Nederlands</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTText->content_nl}}</textarea>
                           <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                       </div>
               </form>
         </div>
         <!-- ICT Subsection 2 -->
         <div class="tab-pane fade" id="nav-ICT" role="tabpanel" aria-labelledby="nav-ICT-tab">
+        <h2>Section Title</h2>
               <div class="my-2">
                       <!-- subsection text form -->
                   <form method="POST" action="{{route('texts.update',['text' => $ICTSection1Texts[0]->id])}}">
                         @csrf
                         @method('PUT')
                       <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Section Title</label>
+                          <label for="exampleFormControlTextarea1">English</label>
                           <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[0]->content_en}}</textarea>
+                          
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Francais</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[0]->content_fr}}</textarea>
+                          
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Nederlands</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[0]->content_nl}}</textarea>
                           <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                       </div>
                   </form>
+                  <h2>Section Content</h2>
                   <form method="POST" action="{{route('texts.update',['text' => $ICTSection1Texts[1]->id])}}">
                         @csrf
                         @method('PUT')
                       <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Section Content</label>
+                          <label for="exampleFormControlTextarea1">English</label>
                           <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[1]->content_en}}</textarea>
+                          
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Francais</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[1]->content_fr}}</textarea>
+                          
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Nederlands</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection1Texts[1]->content_nl}}</textarea>
                           <button type="submit" class="btn btn-warning text-dark mt-2"s>Edit</button>
                       </div>
                   </form>
@@ -54,6 +87,8 @@
                                     @csrf
                                     @method('PUT')
                                   <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                  <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                  <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                   <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                               </form>
                           </li>
@@ -64,22 +99,44 @@
           <!-- ICT Subsection 3 -->
         <div class="tab-pane fade" id="nav-Engineering" role="tabpanel" aria-labelledby="nav-Engineering-tab">
               <div class="my-2">
+              <h2>Section Title</h2>
                       <!-- subsection text forms -->
                   <form method="POST" action="{{route('texts.update',['text' => $ICTSection2Texts[0]->id])}}">
                         @csrf
                         @method('PUT')
                       <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Section Title</label>
+                          <label for="exampleFormControlTextarea1">English</label>
                           <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[0]->content_en}}</textarea>
+
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Francais</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[0]->content_fr}}</textarea>
+                         
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Nederlands</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[0]->content_nl}}</textarea>
                           <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                       </div>
                   </form>
+                  <h2>Section Content</h2>
                   <form method="POST" action="{{route('texts.update',['text' => $ICTSection2Texts[1]->id])}}">
                         @csrf
                         @method('PUT')
                       <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Section Content</label>
+                          <label for="exampleFormControlTextarea1">English</label>
                           <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[1]->content_en}}</textarea>
+                          
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Francais</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[1]->content_fr}}</textarea>
+            
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Nederlands</label>
+                          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$ICTSection2Texts[1]->content_nl}}</textarea>
                           <button type="submit" class="btn btn-warning text-dark mt-2"s>Edit</button>
                       </div>
                   </form>
@@ -94,6 +151,8 @@
                                     @csrf
                                     @method('PUT')
                                   <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                  <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                  <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                   <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                               </form>
                           </li>

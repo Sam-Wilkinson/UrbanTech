@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Request as middlewareRequest;
+use App;
+use Session;
 use App\Text;
 use App\Job;
 use App\Category;
@@ -12,6 +15,8 @@ use App\Http\Requests\StoreContact;
 
 class FrontController extends Controller
 {
+    
+
     public function welcome(){
 
         $homeDescription = Text::where('position','LIKE','%home_description%')->first();
@@ -93,6 +98,14 @@ class FrontController extends Controller
         return redirect()->route('welcome')->with([
             "message" => 'Your email has been sent and we will get back to you as soon as possible'
         ]);
+    }
+
+    public function changeLocale($locale){
+        if (in_array($locale, \Config::get('app.locales'))) {
+            Session::put('locale', $locale);
+          }
+         
+          return redirect()->back();
     }
     
 }

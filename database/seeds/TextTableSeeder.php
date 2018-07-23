@@ -207,7 +207,9 @@ class TextTableSeeder extends Seeder
 
                 Les imprévus et la réadaptation des objectifs en fonction de l'actualité, des évènements internes ou externes à votre entreprise ne modifient en rien notre engagement de travailler sur votre compétitivité à long terme et d'apporter la meilleure solution à vos besoins.
                 ",
-                'content_nl' => "",
+                'content_nl' => "Ons vermogen tot snel mobiliseren van talenten, maakt van Urbantech de ideale partner.
+
+                Onvoorziene gebeurtenissen en aanpassingen van objectieven in functie van de realiteit, van interne of externe gebeurtenissen, veranderen niets aan ons engagement om te werken aan uw competitiviteit op lange termijn en om u de beste oplossingen te brengen voor uw noden.",
                 'position' => "values_section4_text",
             ],
             [

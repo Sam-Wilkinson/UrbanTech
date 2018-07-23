@@ -13,12 +13,23 @@
         <!-- Subsection text form -->
         <div class="tab-pane fade show active" id="nav-rtext" role="tabpanel" aria-labelledby="nav-rtext-tab">
                 <div class="my-2">
+                <h2>Section Title</h2>
                     <form method="POST" action="{{route('texts.update',['text' => $recText->id])}}">
                             @csrf
                             @method('PUT')
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Section Title</label>
+                            <label for="exampleFormControlTextarea1">English</label>
                             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recText->content_en}}</textarea>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Francais</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recText->content_fr}}</textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Nederlands</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recText->content_nl}}</textarea>
                             <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                         </div>
                     </form>
@@ -27,15 +38,27 @@
         <!-- Subsection 1-->
         <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
                 <div class="my-2">
+                <h2>Section Title</h2>
                     <!-- Subsection 1 title form -->
                     <form method="POST" action="{{route('texts.update',['text' => $recSection1title->id])}}">
                             @csrf
                             @method('PUT')
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Section Title</label>
+                            <label for="exampleFormControlTextarea1">English</label>
                             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection1title ->content_en}}</textarea>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Francais</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection1title ->content_fr}}</textarea>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Nederlands</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection1title ->content_nl}}</textarea>
                             <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                         </div>
+
                     </form>
                 <!-- Subsection 1 list form -->
                 <div class="row justify-content-between">
@@ -48,6 +71,8 @@
                                     @csrf
                                     @method('PUT')
                                 <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                 <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                             </form>
                         </li>
@@ -58,13 +83,24 @@
         <!-- Subsection 2 -->
         <div class="tab-pane fade" id="nav-engineer" role="tabpanel" aria-labelledby="nav-engineer-tab">
                 <div class="my-2">
+                <h2>Section Title</h2>
                         <!-- Subsection 2 title form -->
                     <form method="POST" action="{{route('texts.update',['text' => $recSection2title->id])}}">
                             @csrf
                             @method('PUT')
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Section Title</label>
+                            <label for="exampleFormControlTextarea1">English</label>
                             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection2title ->content_en}}</textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Francais</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection2title ->content_fr}}</textarea>
+    
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Nederlands</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection2title ->content_nl}}</textarea>
                             <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                         </div>
                     </form>
@@ -80,6 +116,8 @@
                                     @csrf
                                     @method('PUT')
                                 <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                 <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                             </form>
                         </li>
@@ -89,14 +127,25 @@
         </div>
         <!-- Subsection 3-->
         <div class="tab-pane fade" id="nav-expert" role="tabpanel" aria-labelledby="nav-expert-tab">
+        <h2>Section Title</h2>
             <div class="my-2">
                     <!-- Subsection 3 title form -->
                     <form method="POST" action="{{route('texts.update',['text' => $recSection3title->id])}}">
                             @csrf
                             @method('PUT')
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Section Title</label>
+                            <label for="exampleFormControlTextarea1">English</label>
                             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection3title ->content_en}}</textarea>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Francais</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection3title ->content_fr}}</textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Nederlands</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection3title ->content_nl}}</textarea>
                             <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                         </div>
                     </form>
@@ -112,6 +161,8 @@
                                     @csrf
                                     @method('PUT')
                                 <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                 <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                             </form>
                         </li>
@@ -121,14 +172,25 @@
         </div>
         <!-- Subsection 4-->
         <div class="tab-pane fade" id="nav-pcexpert" role="tabpanel" aria-labelledby="nav-pcexpert-tab">
+        <h2>Section Title</h2>
                 <div class="my-2">
                         <!-- Subsection4 title form -->
                     <form method="POST" action="{{route('texts.update',['text' => $recSection4title->id])}}">
                             @csrf
                             @method('PUT')
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Section Title</label>
+                            <label for="exampleFormControlTextarea1">English</label>
                             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection4title ->content_en}}</textarea>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Francais</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection4title ->content_fr}}</textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Nederlands</label>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$recSection4title ->content_nl}}</textarea>
                             <button type="submit" class="btn btn-warning text-dark mt-2">Edit</button>
                         </div>
                     </form>
@@ -144,6 +206,8 @@
                                     @csrf
                                     @method('PUT')
                                 <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_en}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_fr}}">
+                                <input name="text" type="text" class=" col-8 form-control" value="{{$title->content_nl}}">
                                 <button class="btn btn-warning text-dark" href="{{route('texts.edit',['text' => $title->id])}}">Edit</button>
                             </form>
                         </li>

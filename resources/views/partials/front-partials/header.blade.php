@@ -1,4 +1,5 @@
-<header>            
+<header>           
+    {{$locale}}
         <div class="main-header-area">
             <div class="container">
                 <div class="row">
@@ -19,11 +20,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 acurate">
-                        @if(session('message'))
-                            <h4 style="color:black">{{session('message')}}</h4 >
-                        @endif
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding:36px 25px ">
+                        <div class="locale">
+                            <a href="{{route('changeLocale',['locale'=> 'en'])}}" class="{{Session::get('locale') == 'en'? 'active':''}}">EN</a>
+                            |
+                            <a href="{{route('changeLocale',['locale'=> 'fr'])}}" class="{{Session::get('locale') == 'fr'? 'active':''}}">FR</a>
+                            |
+                            <a href="{{route('changeLocale',['locale'=> 'nl'])}}" class="{{Session::get('locale') == 'nl'? 'active':''}}">NL</a>
+                        </div>
                     </div>
+                    @if(session('message'))
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 acurate">
+                            <h4 style="color:black">{{session('message')}}</h4 >
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

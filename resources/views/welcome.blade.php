@@ -1,5 +1,7 @@
 @extends('layouts.front')
-        
+
+@php($locale = Session::get('locale')) 
+       
 @section('content')
 
     @include('partials.welcome-partials.slider')
