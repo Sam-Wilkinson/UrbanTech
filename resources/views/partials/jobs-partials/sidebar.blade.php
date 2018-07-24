@@ -28,7 +28,24 @@
                             <div class="posted-date">
                                 <a href="{{route('job',['job'=>$job->id])}}">{{$job->created_at->format('F')}} {{$job->created_at->format('d')}}, {{$job->created_at->format('Y')}}</a>
                             </div>
-                            <p>{{$job->name_en}}</p>                 
+                            <p>
+                                @if(Session::get('locale') == 'nl')
+                                    @if($job->name_nl != "")
+                                    {{$job->name_nl}}
+                                    @else
+                                    {{$job->name_en}}
+                                    @endif
+                                @elseif(Session::get('locale') == 'fr')
+                                    @if($job->name_fr != "")
+                                    {{$job->name_fr}}
+                                    @else
+                                    {{$job->name_en}}
+                                    @endif
+                                @else
+                                {{$job->name_en}}
+                                @endif
+                                
+                            </p>                 
                         </div>
                     </div>
                     @endforeach
@@ -43,7 +60,23 @@
                 <ul>
                     @foreach($categories as $cat)
                         <li>
-                            <a class="{{isset($category)? $category == $cat->id? 'before':'':'before'}}" href="{{route('category',['category'=>$cat->id])}}">{{$cat->name_en}}</a>
+                            <a class="{{isset($category)? $category == $cat->id? 'before':'':'before'}}" href="{{route('category',['category'=>$cat->id])}}">
+                                @if(Session::get('locale') == 'nl')
+                                    @if($cat->name_nl != "")
+                                    {{$cat->name_nl}}
+                                    @else
+                                    {{$cat->name_en}}
+                                    @endif
+                                @elseif(Session::get('locale') == 'fr')
+                                    @if($cat->name_fr != "")
+                                    {{$cat->name_fr}}
+                                    @else
+                                    {{$cat->name_en}}
+                                    @endif
+                                @else
+                                {{$cat->name_en}}
+                                @endif
+                            </a>
                         </li>
                     @endforeach
                 </ul>

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@php($locale = Session::get('locale')) 
+
        
 @section('content')
 

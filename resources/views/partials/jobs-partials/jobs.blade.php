@@ -9,7 +9,24 @@
                     </ul>
                 </div>
             </div>
-            <h6><a href="{{route('job',['job'=>$job->id])}}">{{$job->name_en}}</a></h6>
+            <h6><a href="{{route('job',['job'=>$job->id])}}">
+                @if(Session::get('locale') == 'nl')
+                    @if($job->name_nl != "")
+                    {{$job->name_nl}}
+                    @else
+                    {{$job->name_en}}
+                    @endif
+                @elseif(Session::get('locale') == 'fr')
+                    @if($job->name_fr != "")
+                    {{$job->name_fr}}
+                    @else
+                    {{$job->name_en}}
+                    @endif
+                @else
+                {{$job->name_en}}
+                @endif
+                </a>
+            </h6>
         </div>
     </div> 
 @endforeach

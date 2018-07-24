@@ -1,5 +1,4 @@
 <header>           
-    {{$locale}}
         <div class="main-header-area">
             <div class="container">
                 <div class="row">
