@@ -14,7 +14,7 @@
              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                  <div class="single-news">
                      <div class="news-image">
-                        <a href="{{route('job',['job' => $job->id])}}"><img src="{{$job->image ? Storage::disk('jobs')->url($category->image):asset('theme/defaultImages/job'.$i.'.jpg') }}" alt=""></a>
+                        <a href="{{route('job',['job' => $job->id])}}"><img src="{{$job->image ? Storage::disk('jobs-thumb')->url($job->image):asset('theme/defaultImages/job'.$i.'.jpg') }}" alt=""></a>
                          <div class="news-date">                                    
                             <p>
                                 {{$job->created_at->format('d')}} 

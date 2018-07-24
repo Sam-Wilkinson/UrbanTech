@@ -18,12 +18,14 @@
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
               <div class="single-blog-post">
                 <div class="blog-image">
-                  <a href=""><img class="img-fluid" src="{{$job->image ? Storage::disk('jobs')->url($category->image):asset('theme/main/placeholder/img/single-services.jpg') }}" alt="Image of Job"></a>
+                  <a href=""><img class="img-fluid" src="{{$job->image ? Storage::disk('jobs')->url($job->image):asset('theme/main/placeholder/img/single-services.jpg') }}" alt="Image of Job"></a>
                 </div>
                 <h2>{{$job->name_en}}</h2>
                 <p>{!! $job->description_en !!}</p>
                 <h2>Skills</h2>
                 <p>{!! $job->skills_en !!}</p>
+                <h2>Location</h2>
+                <p>{!! $job->location_en !!}</p>
               </div>
 
             </div>

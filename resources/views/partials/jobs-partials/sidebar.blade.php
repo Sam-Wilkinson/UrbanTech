@@ -21,7 +21,7 @@
                     <div class="media single-post">
                         <div class="pull-left">
                             <a  href="{{route('job',['job'=>$job->id])}}">
-                                <img class="media-object" style="height:70px;width;62px" src="{{$job->image ? Storage::disk('jobs')->url($category->image):asset('theme/defaultImages/job0.jpg') }}" alt="post">
+                                <img class="media-object" style="height:70px;width;62px" src="{{$job->image ? Storage::disk('jobs-tiny')->url($job->image):asset('theme/defaultImages/job0.jpg') }}" alt="post">
                             </a>
                         </div>
                         <div class="media-body">                                            

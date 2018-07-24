@@ -22,7 +22,7 @@
                     @endif
                     </h2>
                   <div class="blog-image">
-                    <a><img src="{{$job->image ? Storage::disk('jobs')->url($category->image):asset('theme/defaultImages/job0.jpg')}}" style="height:424px"alt="family"></a>
+                    <a><img src="{{$job->image ? Storage::disk('jobs')->url($job->image):asset('theme/defaultImages/job0.jpg')}}" style="height:424px"alt="family"></a>
                   </div>
                   <h2>
                     @if(Session::get('locale') == 'nl')

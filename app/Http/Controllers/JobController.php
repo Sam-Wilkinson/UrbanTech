@@ -56,6 +56,9 @@ class JobController extends Controller
         $job->categories_id= $request->category;
         if($request->image != null){
             $job->image = App::make('ImageResize')->imageStore($request->image, 'jobs', 720 , null);
+            App::make('ImageResize')->imageStore($request->image, 'jobs-thumb', null, 263);
+            App::make('ImageResize')->imageStore($request->image, 'jobs-tiny', null , 70);
+
         }
         if($job->save()){
         return redirect()->route('jobs.index')->with([
@@ -118,10 +121,13 @@ class JobController extends Controller
         $job->location_nl = $request->location_nl;
         $job->categories_id= $request->category;
         if($request->image != null){
-            if($category->image != null){
+            if($job->image != null){
                 App::make('ImageDelete')->imageDelete($job->image, 'jobs');
+                
             }
             $job->image = App::make('ImageResize')->imageStore($request->image, 'jobs', 720 , null);
+                          App::make('ImageResize')->imageStore($request->image, 'jobs-thumb', null, 263);
+                          App::make('ImageResize')->imageStore($request->image, 'jobs-tiny', null , 70);
         }
         if($job->save()){
         return redirect()->route('jobs.index')->with([

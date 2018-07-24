@@ -60,6 +60,18 @@ return [
             'url' => env('APP_URL').'/storage/jobs',
             'visibility' => 'public',
         ],
+        'jobs-thumb' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/jobs/thumb'),
+            'url' => env('APP_URL').'/storage/jobs/thumb',
+            'visibility' => 'public',
+        ],
+        'jobs-tiny' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/jobs/tiny'),
+            'url' => env('APP_URL').'/storage/jobs/tiny',
+            'visibility' => 'public',
+        ],
         'categories' => [
             'driver' => 'local',
             'root' => storage_path('app/public/categories'),
