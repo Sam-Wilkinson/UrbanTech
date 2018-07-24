@@ -86,7 +86,7 @@ class TextTableSeeder extends Seeder
                 'position' => "home_list_subtitle4",
             ],
             [
-                'content_en' => "Improve your process, organisation & financial performance",
+                'content_en' => "Full operational fleet management and specific fleet consulting",
                 'content_fr' => "",
                 'content_nl' => "",
                 'position' => "home_list_subtitle5",

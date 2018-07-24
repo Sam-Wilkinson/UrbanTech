@@ -3171,3 +3171,16 @@ Sidebar area start Here
 .locale .active {
     text-decoration: underline;
 }
+
+.subject1,
+.subject2,
+.subject3,
+.subject4,
+.subject5 {
+    position: absolute;
+    opacity: 0;
+}
+
+.hovering {
+    opacity: 100;
+}

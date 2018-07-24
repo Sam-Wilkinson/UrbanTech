@@ -27,126 +27,159 @@
                             @endif
                             <div class="slider-botton" >
                                 <ul>
+                                    <li class="listtitle1"><a>
                                 @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[0]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[0]->content_nl}}</a></li>
+                                        {{$homeListTitles[0]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[0]->content_en}}</a></li>
+                                        homeListTitles[0]->content_en}}
                                     @endif
-                                    
+                                
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[0]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[0]->content_fr}}</a></li>
+                                        {{$homeListTitles[0]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[0]->content_en}}</a></li>
+                                        {{$homeListTitles[0]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[0]->content_en}}</a></li>
+                                    {{$homeListTitles[0]->content_en}}
                                 @endif
-
+                                    </a></li>
+                                    <li class="listtitle2" onmouseover="hovering(1)" onmouseout="hoverout(1)"><a>
                                 @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[1]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[1]->content_nl}}</a></li>
+                                        {{$homeListTitles[1]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[1]->content_en}}</a></li>
+                                        {{$homeListTitles[1]->content_en}}
                                     @endif
                                     
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[1]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[1]->content_fr}}</a></li>
+                                        {{$homeListTitles[1]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[1]->content_en}}</a></li>
+                                        {{$homeListTitles[1]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[1]->content_en}}</a></li>
+                                    {{$homeListTitles[1]->content_en}}
                                 @endif
-
+                                </a></li>
+                                <li class="listtitle3" onmouseover="hovering(2)" onmouseout="hoverout(2)"><a>
                                  @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[2]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[2]->content_nl}}</a></li>
+                                        {{$homeListTitles[2]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[2]->content_en}}</a></li>
+                                        {{$homeListTitles[2]->content_en}}
                                     @endif
                                     
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[2]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[2]->content_fr}}</a></li>
+                                        {{$homeListTitles[2]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[2]->content_en}}</a></li>
+                                        {{$homeListTitles[2]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[2]->content_en}}</a></li>
+                                    {{$homeListTitles[2]->content_en}}
                                 @endif
-
+                                </a></li>
+                                <li class="listtitle4" onmouseover="hovering(3)" onmouseout="hoverout(3)"><a>
                                  @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[3]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[3]->content_nl}}</a></li>
+                                        {{$homeListTitles[3]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[3]->content_en}}</a></li>
+                                        {{$homeListTitles[3]->content_en}}
                                     @endif
                                     
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[3]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[3]->content_fr}}</a></li>
+                                        {{$homeListTitles[3]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[3]->content_en}}</a></li>
+                                        {{$homeListTitles[3]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[3]->content_en}}</a></li>
+                                    {{$homeListTitles[3]->content_en}}
                                 @endif
-
+                                </a></li>
+                                <li class="listtitle5" onmouseover="hovering(4)" onmouseout="hoverout(4)"><a>
                                  @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[4]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[4]->content_nl}}</a></li>
+                                        {{$homeListTitles[4]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[4]->content_en}}</a></li>
+                                        {{$homeListTitles[4]->content_en}}
                                     @endif
                                     
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[4]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[4]->content_fr}}</a></li>
+                                        {{$homeListTitles[4]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[4]->content_en}}</a></li>
+                                        {{$homeListTitles[4]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[4]->content_en}}</a></li>
+                                    {{$homeListTitles[4]->content_en}}
                                 @endif
-
+                                </a></li>
+                                <li class="listtitle6" onmouseover="hovering(5)" onmouseout="hoverout(5)"><a>
                                  @if(Session::get('locale') == 'nl')
 
                                     @if($homeListTitles[5]->content_nl !="")
-                                        <li><a href="#">{{$homeListTitles[5]->content_nl}}</a></li>
+                                        {{$homeListTitles[5]->content_nl}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[5]->content_en}}</a></li>
+                                        {{$homeListTitles[5]->content_en}}
                                     @endif
                                     
                                 @elseif(Session::get('locale') == 'fr')
 
                                     @if($homeListTitles[5]->content_fr !="")
-                                        <li><a href="#">{{$homeListTitles[5]->content_fr}}</a></li>
+                                        {{$homeListTitles[5]->content_fr}}
                                     @else
-                                        <li><a href="#">{{$homeListTitles[5]->content_en}}</a></li>
+                                        {{$homeListTitles[5]->content_en}}
                                     @endif
 
                                 @else
-                                    <li><a href="#">{{$homeListTitles[5]->content_en}}</a></li>
+                                    <li><a>{{$homeListTitles[5]->content_en}}
                                 @endif
-                        
+                                </a></li>
+                                </ul>
+                                @php($i = 1)
+                                <ul style="margin-top:40px;position:relative">
+                                    @foreach($homeListSubtitles as $subtitle)
+                                    <li class="subject{{$i}}"><a>
+                                        @if(Session::get('locale') == 'nl')
+
+                                            @if($subtitle->content_nl !="")
+                                                {{$subtitle->content_nl}}
+                                            @else
+                                                {{$subtitle->content_en}}
+                                            @endif
+                                            
+                                        @elseif(Session::get('locale') == 'fr')
+        
+                                            @if($subtitle->content_fr !="")
+                                                {{$subtitle->content_fr}}
+                                            @else
+                                                {{$subtitle->content_en}}
+                                            @endif
+        
+                                        @else
+                                            {{$subtitle->content_en}}
+                                        @endif
+                                    </a></li>
+                                    @php($i++)
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

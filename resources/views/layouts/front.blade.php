@@ -77,6 +77,8 @@
         <script src="{{asset('theme/main/placeholder/js/waypoints.min.js')}}"></script>
 		<!-- plugins js -->
         <script src="{{asset('theme/main/placeholder/js/plugins.js')}}"></script>
+        <!-- welcome slider Hover js -->
+        <script src="{{asset('js/hover.js')}}"></script>
         <!-- Nivo slider js
         ============================================ -->        
         <script src="{{asset('theme/main/placeholder/inc/custom-slider/js/jquery.nivo.slider.js')}}" type="text/javascript"></script>
