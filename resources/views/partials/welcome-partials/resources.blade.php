@@ -61,7 +61,7 @@
                                     @else 
                                         {{$recTitles[$i]->content_en}} 
                                     @endif 
-                                @else 
+                                @else
                                     {{$recTitles[$i]->content_en}} 
                                 @endif
 

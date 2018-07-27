@@ -150,7 +150,7 @@
                                     @endif
 
                                 @else
-                                    <li><a>{{$homeListTitles[5]->content_en}}
+                                {{$homeListTitles[5]->content_en}}
                                 @endif
                                 </a></li>
                                 </ul>

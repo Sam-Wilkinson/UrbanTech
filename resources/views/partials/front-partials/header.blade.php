@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding:36px 25px ">
-                        <div class="locale">
+                        <div class="locale text-center">
                             <a href="{{route('changeLocale',['locale'=> 'en'])}}" class="{{Session::get('locale') == 'en'? 'active':''}}">EN</a>
                             |
                             <a href="{{route('changeLocale',['locale'=> 'fr'])}}" class="{{Session::get('locale') == 'fr'? 'active':''}}">FR</a>
@@ -39,29 +39,28 @@
         <div class="mobile-menu-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <div class="mobile-menu">
                             <nav id="dropdown">
                             <ul>
-                                <li class="active"><a href="index.html">Home <span></span> </a></li>
-                                <li><a href="about.html">About </a></li>
-                                <li><a href="services.html">Services <span></span></a></li>
-                                <li><a href="project.html">Projects <span></span> </a>
+                                <li class="{{Route::currentRouteName()=='welcome'? 'active':''}}"><a href="{{route('welcome')}}">Home <span></span> </a></li>
+                                
+                                <li class="{{Route::currentRouteName()=='jobs'? 'active':''}}"><a href="{{route('jobs')}}">Jobs <span></span> </a>
                                 </li>
-                                <li><a href="news.html">News <span></span> </a>
-                                </li>
-                                <li><a href="#">Pages <span></span> </a>
-                                    <ul>
-                                        <li><a href="single-services.html">Single Services</a></li>
-                                        <li><a href="single-project.html">Single Project</a></li>
-                                        <li><a href="single-news.html">Single News</a></li>
-                                        <li><a href="404.html">Error Page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                
+                                <li class="{{Route::currentRouteName()=='contact'? 'active':''}}"><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                             </nav>
                         </div>          
+                    </div>
+                    <div class="col-1">
+                        <div class="locale text-center">
+                            <a href="{{route('changeLocale',['locale'=> 'en'])}}" class="{{Session::get('locale') == 'en'? 'active':''}}">EN</a>
+                            |
+                            <a href="{{route('changeLocale',['locale'=> 'fr'])}}" class="{{Session::get('locale') == 'fr'? 'active':''}}">FR</a>
+                            |
+                            <a href="{{route('changeLocale',['locale'=> 'nl'])}}" class="{{Session::get('locale') == 'nl'? 'active':''}}">NL</a>
+                        </div>
                     </div>
                 </div>
             </div>

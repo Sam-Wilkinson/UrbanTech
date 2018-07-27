@@ -15,7 +15,7 @@
 @section('content')
 <div class="row">
     @foreach($categories as $category)
-    <div class="col-md-4 col-sm-6 ">
+    <div class="col-xl-4 col-sm-12">
             <div class="card m-5">
                 <div class="card-img-top d-flex mt-3">
                     <img class="m-auto" style="width:60px;height:60px"src="{{$category->image ? Storage::disk('categories')->url($category->image):asset('theme/defaultImages/category.png') }}" alt="">
