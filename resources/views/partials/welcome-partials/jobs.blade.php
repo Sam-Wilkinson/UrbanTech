@@ -69,5 +69,23 @@
              @endforeach
         </div>                
     </div>
+    <!-- Call to action area start here -->
+        <div class="call-top-action">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                               <div class="subscribe-text">
+                                   <h2>For more  <span>Information</span> about  our availible <span>Jobs</span></h2>
+                               </div>
+                           </div>
+                           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                               <div class="subscribe-now">
+                                   <a href="{{route('jobs')}}">Check it out</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>       
+        <!-- Call to action area end here -->       
 </div>
 <!-- Home page Blog end here -->
